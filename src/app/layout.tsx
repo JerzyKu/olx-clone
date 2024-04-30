@@ -15,9 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className="bg-gray-200 text-emerald-950">
         <Navbar />
-        <main>{children}</main>
+        <main className="p-4">{children}</main>
         <Footer />
       </body>
     </html>
