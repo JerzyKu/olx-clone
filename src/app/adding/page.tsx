@@ -38,8 +38,8 @@ export default function AddingOffer({}: Props) {
         <p className="text-xs">wpisz przynajmniej 16 znaków</p>
       </Card>
       <Card>
-        Zdjęcia Pierwsze zdjęcie będzie zdjęciem głównym. <br />
-        Przeciągaj zdjęcia na inne miejsca, aby zmienić ich kolejność.
+        <p>Zdjęcia Pierwsze zdjęcie będzie zdjęciem głównym. </p>
+        <p>Przeciągaj zdjęcia na inne miejsca, aby zmienić ich kolejność.</p>
       </Card>
       <Card>
         Opis*
@@ -52,18 +52,39 @@ export default function AddingOffer({}: Props) {
           placeholder="Wpisz te informacje, które byłyby ważna dla Ciebie podczas przeglądania tekiego ogłoszenia"
         ></textarea>
       </Card>
-      <Card>Lokalizacja</Card>
       <Card>
-        <p>Dane kontaktowe</p>
-        <p>Osoba kontaktowa*</p>
-        <p>Jerzy</p>
-        <p>Adres e-mail</p>
-        <p>jerzy@jerzy.jerzy</p>
-        <p>Numer telefonu</p>
-        <p>123 123 123</p>
+        <p>Lokalizacja</p>                                                                                              
+        <input readOnly
+          type="text"
+          value={"Warsaw"}
+          className={`border-b-4 bg-gray-200 p-4`}
+        />
       </Card>
       <Card>
-        <button className="ml-auto py-2 px-4 bg-emerald-950 text-white">Dodaj ogłoszenie</button>
+        <p className="font-bold">Dane kontaktowe</p>
+        <p>Osoba kontaktowa*</p>
+        <input readOnly
+          type="text"
+          value={"Jerzy"}
+          className={`border-b-4 bg-gray-200 p-4`}
+        />
+        <p>Adres e-mail</p>
+        <input readOnly
+          type="text"
+          value={"jerzy@jerzy.jerzy"}
+          className={`border-b-4 bg-gray-200 p-4`}
+        />
+        <p>Numer telefonu</p>
+        <input readOnly
+          type="text"
+          value={"123 123 123"}
+          className={`border-b-4 bg-gray-200 p-4`}
+        />
+      </Card>
+      <Card>
+        <button className="ml-auto py-2 px-4 bg-emerald-950 text-white rounded-lg">
+          Dodaj ogłoszenie
+        </button>
       </Card>
     </>
   );
