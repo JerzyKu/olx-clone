@@ -8,6 +8,7 @@ type Props = {};
 export default function AddingOffer({}: Props) {
   const [title, setTitle] = useState("");
   const [isTitleCorrect, setIsTitleCorrect] = useState(true);
+  const [description, setDescription] = useState("");
 
   useEffect(() => {
     if (title.length >= 16 || title.length == 0) {
@@ -37,10 +38,10 @@ export default function AddingOffer({}: Props) {
         />
         <p className="text-xs">wpisz przynajmniej 16 znaków</p>
       </Card>
-      <Card>
+      {/* <Card>
         <p>Zdjęcia Pierwsze zdjęcie będzie zdjęciem głównym. </p>
         <p>Przeciągaj zdjęcia na inne miejsca, aby zmienić ich kolejność.</p>
-      </Card>
+      </Card> */}
       <Card>
         Opis*
         <textarea
@@ -50,17 +51,19 @@ export default function AddingOffer({}: Props) {
           rows={10}
           className="border-b-4 bg-gray-200 p-4"
           placeholder="Wpisz te informacje, które byłyby ważna dla Ciebie podczas przeglądania tekiego ogłoszenia"
-        ></textarea>
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+        />
       </Card>
-      <Card>
+      {/* <Card>
         <p>Lokalizacja</p>                                                                                              
         <input readOnly
           type="text"
           value={"Warsaw"}
           className={`border-b-4 bg-gray-200 p-4`}
         />
-      </Card>
-      <Card>
+      </Card> */}
+      {/* <Card>
         <p className="font-bold">Dane kontaktowe</p>
         <p>Osoba kontaktowa*</p>
         <input readOnly
@@ -80,9 +83,9 @@ export default function AddingOffer({}: Props) {
           value={"123 123 123"}
           className={`border-b-4 bg-gray-200 p-4`}
         />
-      </Card>
+      </Card> */}
       <Card>
-        <button className="ml-auto py-2 px-4 bg-emerald-950 text-white rounded-lg">
+        <button className="ml-auto py-2 px-4 bg-emerald-950 text-white rounded-lg font-bold">
           Dodaj ogłoszenie
         </button>
       </Card>
