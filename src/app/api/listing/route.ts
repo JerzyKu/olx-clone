@@ -2,14 +2,20 @@ import { NextRequest } from "next/server";
 import { listings } from "./data";
 
 export async function GET(request: NextRequest) {
-  const searchParams = request.nextUrl.searchParams
+  const searchParams = request.nextUrl.searchParams;
+  console.log(searchParams);
+
+  const query = searchParams.get("query")
+
+  console.log(query);
+  
   return Response.json(listings);
 }
 
 export async function POST(request: Request) {
   const listing = await request.json();
 
-  if (listing?.title === undefined || listing?.body === undefined){
+  if (listing?.title === undefined || listing?.body === undefined) {
     return new Response(JSON.stringify({ msg: "all fields are required" }), {
       status: 400,
       headers: {
@@ -20,7 +26,7 @@ export async function POST(request: Request) {
 
   const newListing = {
     id: listings.length + 1,
-    ...listing
+    ...listing,
   };
 
   listings.push(newListing);
