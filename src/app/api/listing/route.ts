@@ -3,13 +3,16 @@ import { listings } from "./data";
 
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
-  console.log(searchParams);
+  const query = searchParams.get("query");
 
-  const query = searchParams.get("query")
+  const filteredListings = query
+    ? listings.filter(
+        (listing) =>
+          listing.title.includes(query) || listing.body.includes(query)
+      )
+    : listings;
 
-  console.log(query);
-  
-  return Response.json(listings);
+  return Response.json(filteredListings);
 }
 
 export async function POST(request: Request) {
