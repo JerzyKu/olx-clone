@@ -11,7 +11,7 @@ export async function GET(
   if (filteredListings.length > 0) {
     return Response.json(filteredListings[0]);
   }
-  return new Response(JSON.stringify({ msg: "no listing with this ID" }), {
+  return new Response(JSON.stringify({ message: "no listing with this ID" }), {
     status: 400,
     headers: {
       "Content-Type": "application/json",
@@ -30,7 +30,7 @@ export async function PATCH(
   );
 
   if (index === -1) {
-    return new Response(JSON.stringify({ msg: "no listing with this ID" }), {
+    return new Response(JSON.stringify({ message: "no listing with this ID" }), {
       status: 400,
       headers: {
         "Content-Type": "application/json",
@@ -53,7 +53,7 @@ export async function DELETE(
     (listing) => listing.id.toString() === params.id
   );
   if (index === -1) {
-    return new Response(JSON.stringify({ msg: "no listing with this ID" }), {
+    return new Response(JSON.stringify({ message: "no listing with this ID" }), {
       status: 400,
       headers: {
         "Content-Type": "application/json",

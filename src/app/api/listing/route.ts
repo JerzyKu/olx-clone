@@ -19,7 +19,7 @@ export async function POST(request: Request) {
   const listing = await request.json();
 
   if (listing?.title === undefined || listing?.body === undefined) {
-    return new Response(JSON.stringify({ msg: "all fields are required" }), {
+    return new Response(JSON.stringify({ message: "all fields are required" }), {
       status: 400,
       headers: {
         "Content-Type": "application/json",
