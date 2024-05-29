@@ -22,7 +22,7 @@ export default function AddingOffer({}: Props) {
   return (
     <>
       <p className="text-2xl font-bold">Dodaj ogłoszenie</p>
-      <Card>
+      <Card className="flex flex-col">
         <p className=" font-bold">Im więcej szczegółów, tym lepiej!</p>
         <p>Tytuł ogłoszenia*</p>
         <input
@@ -42,7 +42,7 @@ export default function AddingOffer({}: Props) {
         <p>Zdjęcia Pierwsze zdjęcie będzie zdjęciem głównym. </p>
         <p>Przeciągaj zdjęcia na inne miejsca, aby zmienić ich kolejność.</p>
       </Card> */}
-      <Card>
+      <Card className="flex flex-col">
         Opis*
         <textarea
           name=""
@@ -84,7 +84,7 @@ export default function AddingOffer({}: Props) {
           className={`border-b-4 bg-gray-200 p-4`}
         />
       </Card> */}
-      <Card>
+      <Card className="flex flex-col">
         <button className="ml-auto py-2 px-4 bg-emerald-950 text-white rounded-lg font-bold">
           Dodaj ogłoszenie
         </button>

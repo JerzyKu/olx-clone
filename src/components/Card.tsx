@@ -1,12 +1,13 @@
 import React from 'react'
 
 type Props = {
-    children: React.ReactNode;
+    className?: string;
+    children?: React.ReactNode;
 }
 
-export default function Card({children}: Props) {
+export default function Card({children, className}: Props) {
   return (
-    <div className='bg-white my-4 p-4 flex flex-col'>
+    <div className={'bg-white my-4 p-4 rounded ' + className}>
         {children}
     </div>
   )
